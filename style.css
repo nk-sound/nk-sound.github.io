@@ -126,7 +126,7 @@ header.header--compact .header-nav a {
 ========================= */
 h2 {
     font-size: 3.5rem;
-    font-weight: 200;
+    font-weight: 300;
     text-transform: uppercase;
     border-bottom: 2px solid var(--accent);
     padding-bottom: 10px;
@@ -135,12 +135,13 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5rem;
-    font-weight: 200;
+    font-size: 2rem;
+    font-weight: 300;
     letter-spacing: 0.12em;
     text-decoration: underline;
     text-underline-offset: 6px;
     text-decoration-color: #fffdf5;
+    text-decoration-skip-ink: auto;
     margin-top: var(--space-md);
     margin-bottom: var(--space-sm);
 }
