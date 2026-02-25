@@ -185,7 +185,7 @@
         const straightD = "M0,20 C37,20 75,20 112,20 C150,20 187,20 225,20 C262,20 300,20 337,20 C375,20 412,20 450,20 C487,20 525,20 562,20 C600,20 637,20 675,20 C712,20 750,20 787,20 C825,20 862,20 900,20 C937,20 975,20 1012,20 C1050,20 1087,20 1125,20 C1162,20 1200,20 1200,20";
 
         function updateHeader() {
-            if (window.scrollY > 10) {
+            if (window.scrollY > 50) {
                 header.classList.add('header--compact');
                 wavePath.setAttribute('d', straightD);
             } else {
