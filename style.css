@@ -23,9 +23,11 @@
 ========================= */
 body {
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     background: #1a1917;
     color: #fffdf5;
     line-height: 1.6;
+    font-size: 18px;
     padding: var(--space-md);
     animation: fadeIn 1s ease-in;
 }
