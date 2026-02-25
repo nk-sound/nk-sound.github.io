@@ -15,7 +15,7 @@
     --space-md: 40px;
     --space-lg: 60px;
     --space-xl: 80px;
-    --accent: #df961a;          /* orange accent — replaces old #f4c21c everywhere */
+    --accent: #df961a;
 }
 
 /* =========================
@@ -23,11 +23,11 @@
 ========================= */
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: 18px;
     font-weight: 300;
     background: #1a1917;
     color: #fffdf5;
     line-height: 1.6;
-    font-size: 18px;
     padding: var(--space-md);
     animation: fadeIn 1s ease-in;
 }
@@ -37,12 +37,6 @@ body {
     margin: 0 auto;
 }
 
-/* =========================
-   SCROLL OFFSET FIX
-========================= */
-/* Offsets anchor jumps so the section title clears the sticky header.
-   The value here matches the full header height (~90px) plus a little
-   breathing room. If you change the header size, adjust this too. */
 section[id] {
     scroll-margin-top: 100px;
 }
@@ -59,7 +53,6 @@ header {
     transition: padding 0.3s ease;
 }
 
-/* Full-height side borders — connect top-down to meet the wave */
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -72,13 +65,12 @@ header {
     position: relative;
 }
 
-/* The SVG wave strip — left/right edges align with header-content border */
 .header-wave {
     width: 100%;
     overflow: hidden;
     line-height: 0;
     position: relative;
-    padding: 0 2px;                  /* inset by border width so wave aligns inside borders */
+    padding: 0 2px;
 }
 
 .header-wave svg {
@@ -86,27 +78,24 @@ header {
     width: 100%;
     height: 30px;
     transition: height 0.3s ease;
-    shape-rendering: geometricPrecision;  /* smooth, no pixellation */
+    shape-rendering: geometricPrecision;
 }
 
-/* The path itself transitions between wavy and straight */
 .wave-path {
     transition: d 0.6s ease;
 }
 
-/* Flatten and shrink the wave strip when compact */
 header.header--compact .header-wave svg {
     height: 16px;
 }
 
-/* Compact state — triggered by JS when user scrolls down */
 header.header--compact .header-content {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 header.header--compact img {
-    width: 120px;   /* shrink logo slightly */
+    width: 120px;
     transition: width 0.3s ease;
 }
 
@@ -123,7 +112,6 @@ header.header--compact .header-nav a {
 .header-nav a {
     color: #fffdf5;
     text-decoration: none;
-    font-weight: 300;
     font-size: 1.5rem;
     transition: color 0.2s ease, font-size 0.3s ease;
 }
@@ -134,7 +122,7 @@ header.header--compact .header-nav a {
 }
 
 /* =========================
-   HEADERS
+   HEADINGS
 ========================= */
 h2 {
     font-size: 3rem;
@@ -157,11 +145,14 @@ h3 {
     margin-bottom: var(--space-sm);
 }
 
-/* Large breathing room between the three main sections */
 #bio,
 #projects {
     margin-top: 140px;
 }
+
+/* =========================
+   VIDEO
+========================= */
 .video-container {
     max-width: 1150px;
     margin: 0 auto var(--space-xl);
@@ -169,7 +160,7 @@ h3 {
 
 .video-wrapper {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: 56.25%;
     border: 1px solid #333;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -185,14 +176,11 @@ h3 {
 /* =========================
    PROJECT VIDEOS
 ========================= */
-
-/* Base row */
 .videos-row {
     display: flex;
-    margin-bottom: 200px;   /* doubled from 100px */
+    margin-bottom: 200px;
 }
 
-/* Single-video row: large centred video */
 .videos-row--single {
     justify-content: center;
 }
@@ -202,7 +190,6 @@ h3 {
     max-width: 990px;
 }
 
-/* Double-video row: centred, symmetrical, wider central gap */
 .videos-row--double {
     justify-content: center;
     gap: 180px;
@@ -214,7 +201,6 @@ h3 {
     max-width: 598px;
 }
 
-/* Empty placeholder in a double row */
 .video-item--empty {
     visibility: hidden;
 }
@@ -224,20 +210,17 @@ h3 {
     flex-direction: column;
 }
 
-/* Description text */
 .video-description {
-    margin-top: 48px;       /* doubled from 24px */
+    margin-top: 48px;
     font-size: 1.1rem;
-    font-weight: 300;
     text-align: center;
     max-width: 85%;
     margin-left: auto;
     margin-right: auto;
-    color: #fffdf5;
 }
 
 /* =========================
-   BIO SECTION
+   BIO
 ========================= */
 .main-content {
     display: flex;
@@ -250,7 +233,6 @@ h3 {
     padding: var(--space-md);
     border: 1px solid #333;
     border-radius: 5px;
-    font-size: 1.1rem;
 }
 
 .content p {
@@ -260,10 +242,6 @@ h3 {
 .content h3,
 .content a.highlight {
     margin-left: 20px;
-}
-
-.content h3 {
-    font-size: 1.5rem;      /* explicitly match global h3 — .content font-size: 1.1rem doesn't affect rem units but this makes it unambiguous */
 }
 
 .content h3 + p {
@@ -277,7 +255,6 @@ h3 {
 }
 
 .pipe {
-    color: #fffdf5;
     line-height: 1;
 }
 
@@ -286,7 +263,7 @@ h3 {
 ========================= */
 details.games-box {
     cursor: pointer;
-    padding: 8px 20px !important;  /* override .content padding — keep it slim */
+    padding: 8px 20px !important;
 }
 
 details.games-box summary {
@@ -303,15 +280,13 @@ details.games-box summary {
     transition: color 0.2s ease;
 }
 
-/* Hide WebKit default marker */
 details.games-box summary::-webkit-details-marker {
     display: none;
 }
 
 details.games-box summary::after {
     content: ' ↓';
-    font-size: 1.3rem;              /* larger, clearly visible */
-    font-weight: 300;
+    font-size: 1.3rem;
     letter-spacing: 0;
     text-decoration: none;
     opacity: 0.8;
@@ -367,7 +342,7 @@ details.games-box h3 {
 .games-box {
     max-width: 700px;
     width: 100%;
-    padding: 10px 20px;             /* slim vertical, keep horizontal */
+    padding: 10px 20px;
     border: 1px solid #333;
     border-radius: 5px;
     text-align: center;
@@ -381,27 +356,19 @@ details.games-box h3 {
 /* =========================
    CELESTE PROJECT LAYOUT
 ========================= */
-
-/* =========================
-   CELESTE PROJECT LAYOUT
-========================= */
-
-/* Each row: text on left, video on right, separated by a gap */
 .celeste-row {
     display: flex;
-    align-items: stretch;           /* both sides same height */
+    align-items: stretch;
     gap: 60px;
     border-top: 2px solid #363430;
     padding-top: var(--space-md);
     padding-bottom: var(--space-md);
 }
 
-/* Bottom border only on the last row */
 .celeste-row:last-of-type {
     border-bottom: 2px solid #363430;
 }
 
-/* Title row: title sits on the left, no video on the right */
 .celeste-title-row {
     display: flex;
     border-top: 2px solid #363430;
@@ -410,32 +377,20 @@ details.games-box h3 {
 }
 
 .celeste-title {
-    font-size: 1.5rem;
-    font-weight: 200;
-    letter-spacing: 0.12em;
-    text-decoration: underline;
-    text-underline-offset: 6px;
-    text-decoration-color: #fffdf5;
     margin: 0;
     text-align: left;
 }
 
-/* Left text block — takes up roughly 35% */
 .celeste-text {
     flex: 0 0 35%;
-    font-size: 1.1rem;
-    font-weight: 300;
-    line-height: 1.6;
-    color: #fffdf5;
     display: flex;
     align-items: center;
 }
 
-/* Right video — fixed width matching old double-row size, pushed right */
 .celeste-video {
     flex: 0 0 598px;
     max-width: 598px;
-    margin-left: auto;              /* pushes video to the right edge */
+    margin-left: auto;
 }
 
 /* =========================
@@ -445,7 +400,6 @@ details.games-box h3 {
     margin-bottom: 120px;
 }
 
-/* Subsection subtitles — centred with generous space before the videos */
 .project-subsection h3 {
     text-align: center;
     margin-bottom: 60px;
@@ -491,7 +445,7 @@ details.games-box h3 {
     }
 
     .video-item--empty {
-        display: none; /* no point showing an invisible spacer on mobile */
+        display: none;
     }
 
     .image-container img {
