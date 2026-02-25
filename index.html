@@ -4,13 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nksound</title>
-
-    <!-- Google Fonts — load all weights used across the site -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;700&display=swap" rel="stylesheet">
-
-    <!-- Link to external CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,7 +23,6 @@
                     <a href="#projects">projects</a>
                 </nav>
             </div>
-            <!-- Sine wave bottom border — flattens when header compresses -->
             <div class="header-wave">
                 <svg viewBox="0 0 1200 40" preserveAspectRatio="none" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg">
                     <path class="wave-path"
@@ -81,7 +76,7 @@
             </div>
         </section>
 
-        <!-- GAMES SECTION -->
+        <!-- GAMES -->
         <section class="games-section">
             <details class="content games-box">
                 <summary class="games-summary">Currently Playing</summary>
@@ -96,16 +91,14 @@
         <section id="projects">
             <h2>PROJECTS</h2>
 
-            <!-- Technical Design: Celeste FMOD — two paired rows -->
+            <!-- Technical Design -->
             <div class="project-subsection">
                 <h3>Technical Design</h3>
 
-                <!-- Project title row (no video) -->
                 <div class="celeste-title-row">
                     <h3 class="celeste-title">Celeste FMOD Implementation Project</h3>
                 </div>
 
-                <!-- Row 1: first description + first video -->
                 <div class="celeste-row">
                     <p class="celeste-text">Implemented stuff.. PLACEHOLDER.</p>
                     <div class="celeste-video">
@@ -115,7 +108,6 @@
                     </div>
                 </div>
 
-                <!-- Row 2: second description + second video -->
                 <div class="celeste-row">
                     <p class="celeste-text">Custom audio pipelines for dynamic in-game music transitions.. PLACEHOLDER.</p>
                     <div class="celeste-video">
@@ -127,11 +119,10 @@
 
             </div>
 
-            <!-- Sound Design: alternating single / double rows -->
+            <!-- Sound Design -->
             <div class="project-subsection">
                 <h3>Sound Design</h3>
 
-                <!-- Row 1: single -->
                 <div class="videos-row videos-row--single">
                     <div class="video-item">
                         <div class="video-wrapper">
@@ -141,7 +132,6 @@
                     </div>
                 </div>
 
-                <!-- Row 2: double -->
                 <div class="videos-row videos-row--double">
                     <div class="video-item">
                         <div class="video-wrapper">
@@ -157,7 +147,6 @@
                     </div>
                 </div>
 
-                <!-- Row 3: single -->
                 <div class="videos-row videos-row--single">
                     <div class="video-item">
                         <div class="video-wrapper">
@@ -167,7 +156,6 @@
                     </div>
                 </div>
 
-                <!-- Row 4: double -->
                 <div class="videos-row videos-row--double">
                     <div class="video-item">
                         <div class="video-wrapper">
@@ -189,11 +177,11 @@
     </div>
 
     <script>
-        // ── 1. COMPACT HEADER ON SCROLL ──────────────────────────────────
+        // compact header on scroll
         const header = document.querySelector('header');
         const wavePath = document.querySelector('.wave-path');
 
-        const wavyD  = "M0,20 C37,5 75,35 112,20 C150,5 187,35 225,20 C262,5 300,35 337,20 C375,5 412,35 450,20 C487,5 525,35 562,20 C600,5 637,35 675,20 C712,5 750,35 787,20 C825,5 862,35 900,20 C937,5 975,35 1012,20 C1050,5 1087,35 1125,20 C1162,5 1200,20 1200,20";
+        const wavyD = "M0,20 C37,5 75,35 112,20 C150,5 187,35 225,20 C262,5 300,35 337,20 C375,5 412,35 450,20 C487,5 525,35 562,20 C600,5 637,35 675,20 C712,5 750,35 787,20 C825,5 862,35 900,20 C937,5 975,35 1012,20 C1050,5 1087,35 1125,20 C1162,5 1200,20 1200,20";
         const straightD = "M0,20 C37,20 75,20 112,20 C150,20 187,20 225,20 C262,20 300,20 337,20 C375,20 412,20 450,20 C487,20 525,20 562,20 C600,20 637,20 675,20 C712,20 750,20 787,20 C825,20 862,20 900,20 C937,20 975,20 1012,20 C1050,20 1087,20 1125,20 C1162,20 1200,20 1200,20";
 
         function updateHeader() {
@@ -209,7 +197,7 @@
         window.addEventListener('scroll', updateHeader, { passive: true });
         updateHeader();
 
-        // ── 2. ACTIVE NAV HIGHLIGHT ───────────────────────────────────────
+        // active nav highlight
         const navLinks = document.querySelectorAll('.header-nav a');
         const sections = document.querySelectorAll('section[id]');
 
