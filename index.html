@@ -20,9 +20,9 @@
                     <img src="img/nksound_logo_warm4.png" alt="nksound logo" width="200">
                 </a>
                 <nav class="header-nav">
-                    <a href="#demoreel">reel</a>
-                    <a href="#bio">bio</a>
-                    <a href="#projects">projects</a>
+                    <a href="#demoreel">REEL</a>
+                    <a href="#bio">BIO</a>
+                    <a href="#game-audio">GAME AUDIO</a>
                 </nav>
             </div>
             <div class="header-bottom"></div>
@@ -79,22 +79,22 @@
             </div>
         </section>
 
-        <!-- PROJECTS -->
-        <section id="projects">
-            <h2>PROJECTS</h2>
+        <!-- GAME AUDIO -->
+        <section id="game-audio">
+            <h2>Game Audio</h2>
 
             <!-- Technical Design -->
             <div class="project-subsection">
                 <h3 class="subsection-label" data-label="Technical Design    |    "></h3>
                 <div class="subsection-content">
 
-                    <div class="celeste-block">
-                        <div class="celeste-row">
-                            <div class="celeste-block-title">
-                                <h3 class="celeste-title">Celeste FMOD Gameplay</h3>
-                                <p class="celeste-text">Gameplay audio captured from FMOD project using all original assets.</p>
+                    <div class="project-block">
+                        <div class="project-block-row">
+                            <div class="project-block-title">
+                                <h3 class="project-block-heading">Celeste FMOD Gameplay</h3>
+                                <p class="project-block-text">Gameplay audio captured from FMOD project using all original assets.</p>
                             </div>
-                            <div class="celeste-video">
+                            <div class="project-block-video">
                                 <div class="video-wrapper">
                                     <iframe src="https://www.youtube-nocookie.com/embed/e1F-PdEmDQI" loading="lazy" allowfullscreen></iframe>
                                 </div>
@@ -102,13 +102,13 @@
                         </div>
                     </div>
 
-                    <div class="celeste-block">
-                        <div class="celeste-row">
-                            <div class="celeste-block-title">
-                                <h3 class="celeste-title">Celeste FMOD Project Breakdown</h3>
-                                <p class="celeste-text">Breakdown </p>
+                    <div class="project-block">
+                        <div class="project-block-row">
+                            <div class="project-block-title">
+                                <h3 class="project-block-heading">Celeste FMOD Project Breakdown</h3>
+                                <p class="project-block-text">Breakdown</p>
                             </div>
-                            <div class="celeste-video">
+                            <div class="project-block-video">
                                 <div class="video-wrapper">
                                     <iframe src="https://www.youtube-nocookie.com/embed/mCUA1bDdPwY" loading="lazy" allowfullscreen></iframe>
                                 </div>
@@ -179,14 +179,14 @@
             <div class="project-subsection">
                 <h3 class="subsection-label" data-label="Film Work    |    "></h3>
                 <div class="subsection-content">
-                    
-                    <div class="celeste-block">
-                        <div class="celeste-row">
-                            <div class="celeste-block-title">
-                                <h3 class="celeste-title">The Bird in My Backyard - Short</h3>
-                                <p class="celeste-text">Original Foley and Sound Design</p>
+
+                    <div class="project-block">
+                        <div class="project-block-row">
+                            <div class="project-block-title">
+                                <h3 class="project-block-heading">The Bird in My Backyard - Short</h3>
+                                <p class="project-block-text">Original Foley and Sound Design</p>
                             </div>
-                            <div class="celeste-video">
+                            <div class="project-block-video">
                                 <div class="video-wrapper">
                                     <iframe src="https://www.youtube-nocookie.com/embed/g02Ss3xgABc?si=ehLSnpfdG-pRSkys" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                 </div>
@@ -194,20 +194,20 @@
                         </div>
                     </div>
 
-                    <div class="celeste-block">
-                        <div class="celeste-row">
-                            <div class="celeste-block-title">
-                                <h3 class="celeste-title">Another Film Project</h3>
-                                <p class="celeste-text">Breakdown </p>
+                    <div class="project-block">
+                        <div class="project-block-row">
+                            <div class="project-block-title">
+                                <h3 class="project-block-heading">Another Film Project</h3>
+                                <p class="project-block-text">Breakdown</p>
                             </div>
-                            <div class="celeste-video">
+                            <div class="project-block-video">
                                 <div class="video-wrapper">
                                     <iframe src="https://www.youtube-nocookie.com/embed/mCUA1bDdPwY" loading="lazy" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -266,7 +266,6 @@
             const subsection = label.closest('.project-subsection');
             const contentEl = subsection.querySelector('.subsection-content');
 
-            // measure one instance height using a probe
             const probe = document.createElement('div');
             probe.style.cssText = [
                 'writing-mode: vertical-lr',
@@ -284,7 +283,6 @@
             const itemHeight = probe.getBoundingClientRect().height;
             document.body.removeChild(probe);
 
-            // get content height and set label to exactly that height
             const contentHeight = contentEl.getBoundingClientRect().height;
             const count = Math.ceil(contentHeight / itemHeight) + 2;
             label.style.height = contentHeight + 'px';
