@@ -57,7 +57,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px var(--space-sm);
+    padding: 8px var(--space-sm);
     transition: padding 0.3s ease;
     border-top: 2px solid #363430;
     border-left: 2px solid #363430;
@@ -68,6 +68,12 @@ header {
 .header-content a {
     display: flex;
     align-items: center;
+}
+
+.header-content img {
+    width: 140px;
+    height: auto;
+    transition: width 0.3s ease;
 }
 
 .header-bottom {
@@ -87,11 +93,8 @@ header.header--compact .header-content {
 }
 
 header.header--compact img {
-    width: 120px;
-    transition: width 0.3s ease;
+    width: 110px;
 }
-
-
 
 .header-nav {
     display: flex;
@@ -101,9 +104,10 @@ header.header--compact img {
 .header-nav a {
     color: #fffdf5;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 300;
-    transition: color 0.2s ease, font-size 0.3s ease;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
 }
 
 .header-nav a:hover,
@@ -126,7 +130,7 @@ h2 {
 
 h3 {
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 700;
     text-decoration: underline;
     text-underline-offset: 6px;
     text-decoration-color: #fffdf5;
@@ -136,7 +140,7 @@ h3 {
 }
 
 #bio,
-#projects {
+#game-audio {
     margin-top: 140px;
 }
 
@@ -275,12 +279,12 @@ h3 {
 
 .games-box summary {
     list-style: none;
-    font-size: 1.5rem;
-    font-weight: 200;
-    letter-spacing: 0.12em;
+    font-size: 2rem;
+    font-weight: 700;
     text-decoration: underline;
     text-underline-offset: 6px;
     text-decoration-color: #fffdf5;
+    text-decoration-skip-ink: auto;
     cursor: pointer;
     user-select: none;
     padding: 2px 0;
@@ -329,38 +333,38 @@ h3 {
 }
 
 /* =========================
-   CELESTE PROJECT LAYOUT
+   PROJECT BLOCK LAYOUT
 ========================= */
-.celeste-block {
+.project-block {
     border-top: 2px solid #363430;
     padding-top: var(--space-md);
     padding-bottom: var(--space-md);
 }
 
-.celeste-block:last-of-type {
+.project-block:last-of-type {
     border-bottom: 2px solid #363430;
 }
 
-.celeste-row {
+.project-block-row {
     display: flex;
     align-items: flex-start;
     gap: 60px;
 }
 
-.celeste-block-title {
+.project-block-title {
     flex: 0 0 35%;
 }
 
-.celeste-title {
+.project-block-heading {
     margin: 0;
     text-align: left;
 }
 
-.celeste-text {
+.project-block-text {
     margin-top: var(--space-sm);
 }
 
-.celeste-video {
+.project-block-video {
     flex: 0 0 440px;
     max-width: 440px;
     margin-left: auto;
