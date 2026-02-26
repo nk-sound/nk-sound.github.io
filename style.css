@@ -400,11 +400,7 @@ h3 {
     flex-shrink: 0;
     align-self: stretch;
     overflow: hidden;
-}
-
-.subsection-label span {
-    display: inline;
-    padding-bottom: 48px;
+    white-space: nowrap;
 }
 
 .subsection-content {
