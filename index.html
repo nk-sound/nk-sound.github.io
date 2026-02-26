@@ -230,36 +230,35 @@
         sections.forEach(s => observer.observe(s));
 
         // repeating vertical subsection labels
-        // overfill with plenty of repeats and let overflow: hidden clip the rest
         const GAP_CHARS = '    ';
 
         function fillLabel(label) {
             const text = label.dataset.label;
             const subsection = label.closest('.project-subsection');
+            const contentEl = subsection.querySelector('.subsection-content');
 
+            // measure one instance height using a probe
             const probe = document.createElement('div');
-            probe.style.cssText = `
-                writing-mode: vertical-lr;
-                font-family: inherit;
-                font-size: inherit;
-                font-weight: inherit;
-                text-transform: uppercase;
-                letter-spacing: inherit;
-                visibility: hidden;
-                position: absolute;
-                white-space: nowrap;
-            `;
-            // measure one full instance including the gap
+            probe.style.cssText = [
+                'writing-mode: vertical-lr',
+                'font-family: inherit',
+                'font-size: inherit',
+                'font-weight: inherit',
+                'text-transform: uppercase',
+                'letter-spacing: inherit',
+                'visibility: hidden',
+                'position: absolute',
+                'white-space: nowrap',
+            ].join(';');
             probe.textContent = text + GAP_CHARS;
             document.body.appendChild(probe);
             const itemHeight = probe.getBoundingClientRect().height;
             document.body.removeChild(probe);
 
-            // measure content height, not subsection — avoids feedback loop where
-            // the label itself inflates the parent before we can measure it
-            const contentEl = subsection.querySelector('.subsection-content');
-            const subsectionHeight = contentEl.getBoundingClientRect().height;
-            const count = Math.ceil(subsectionHeight / itemHeight) + 2;
+            // get content height and set label to exactly that height
+            const contentHeight = contentEl.getBoundingClientRect().height;
+            const count = Math.ceil(contentHeight / itemHeight) + 2;
+            label.style.height = contentHeight + 'px';
             label.textContent = Array(count).fill(text).join(GAP_CHARS);
         }
 
