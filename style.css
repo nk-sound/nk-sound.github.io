@@ -129,8 +129,8 @@ h2 {
 
 h3 {
     font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: 0.12em;
+    font-weight: 500;
+    letter-spacing: 0.05em;
     text-decoration: underline;
     text-underline-offset: 6px;
     text-decoration-color: #fffdf5;
@@ -346,7 +346,6 @@ h3 {
 .celeste-block-title {
     padding-top: var(--space-sm);
     padding-bottom: var(--space-sm);
-    border-bottom: 2px solid #363430;
 }
 
 .celeste-title {
