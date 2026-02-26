@@ -335,28 +335,31 @@ h3 {
 /* =========================
    CELESTE PROJECT LAYOUT
 ========================= */
-.celeste-row {
-    display: flex;
-    align-items: stretch;
-    gap: 60px;
+.celeste-block {
     border-top: 2px solid #363430;
-    padding-top: var(--space-md);
-    padding-bottom: var(--space-md);
 }
 
-.celeste-row:last-of-type {
+.celeste-block:last-of-type {
     border-bottom: 2px solid #363430;
 }
 
-.celeste-title-row {
-    display: flex;
+.celeste-block-title {
     padding-top: var(--space-sm);
-    padding-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid #363430;
 }
 
 .celeste-title {
     margin: 0;
     text-align: left;
+}
+
+.celeste-row {
+    display: flex;
+    align-items: stretch;
+    gap: 60px;
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
 }
 
 .celeste-text {
