@@ -372,7 +372,7 @@ h3 {
 ========================= */
 .project-subsection {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 0;
     margin-bottom: 120px;
 }
@@ -394,9 +394,9 @@ h3 {
     margin: 0;
     padding-right: var(--space-md);
     flex-shrink: 0;
-    align-self: stretch;
     overflow: hidden;
     white-space: nowrap;
+    max-height: 100%;
 }
 
 .subsection-content {
