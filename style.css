@@ -127,7 +127,6 @@ h2 {
 h3 {
     font-size: 2rem;
     font-weight: 500;
-    letter-spacing: 0.05em;
     text-decoration: underline;
     text-underline-offset: 6px;
     text-decoration-color: #fffdf5;
@@ -362,8 +361,8 @@ h3 {
 }
 
 .celeste-video {
-    flex: 0 0 520px;
-    max-width: 520px;
+    flex: 0 0 440px;
+    max-width: 440px;
     margin-left: auto;
 }
 
