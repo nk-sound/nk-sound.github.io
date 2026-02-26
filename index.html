@@ -230,15 +230,13 @@
         sections.forEach(s => observer.observe(s));
 
         // repeating vertical subsection labels
-        // each label is a single text node — repeated text separated by spaces,
-        // flowing naturally in one column under writing-mode: vertical-lr
+        // overfill with plenty of repeats and let overflow: hidden clip the rest
         const GAP_CHARS = '    ';
 
         function fillLabel(label) {
             const text = label.dataset.label;
             const subsection = label.closest('.project-subsection');
 
-            // measure one instance using a temp off-screen element
             const probe = document.createElement('div');
             probe.style.cssText = `
                 writing-mode: vertical-lr;
@@ -257,7 +255,8 @@
             document.body.removeChild(probe);
 
             const subsectionHeight = subsection.getBoundingClientRect().height;
-            const count = Math.max(1, Math.floor(subsectionHeight / (itemHeight * 1.8)));
+            // overfill by 2 extra instances so the text always reaches the bottom
+            const count = Math.ceil(subsectionHeight / itemHeight) + 2;
             label.textContent = Array(count).fill(text).join(GAP_CHARS);
         }
 
