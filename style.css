@@ -399,10 +399,12 @@ h3 {
     padding-right: var(--space-md);
     flex-shrink: 0;
     align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
     overflow: hidden;
+}
+
+.subsection-label span {
+    display: inline;
+    padding-bottom: 48px;
 }
 
 .subsection-content {
