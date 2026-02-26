@@ -256,8 +256,10 @@
             document.body.removeChild(probe);
 
             const subsectionHeight = subsection.getBoundingClientRect().height;
+            console.log('label:', text, '| itemHeight:', itemHeight, '| subsectionHeight:', subsectionHeight);
             // overfill by 2 so the last instance always clips at the bottom
             const count = Math.ceil(subsectionHeight / itemHeight) + 2;
+            console.log('count:', count);
             label.textContent = Array(count).fill(text).join(GAP_CHARS);
         }
 
