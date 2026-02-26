@@ -91,10 +91,7 @@ header.header--compact img {
     transition: width 0.3s ease;
 }
 
-header.header--compact .header-nav a {
-    font-size: 1.2rem;
-    transition: font-size 0.3s ease;
-}
+
 
 .header-nav {
     display: flex;
