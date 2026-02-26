@@ -27,7 +27,7 @@ body {
     font-weight: 100;
     background: #1a1917;
     color: #fffdf5;
-    line-height: 1.6;
+    line-height: 1.3;
     padding: var(--space-md);
     animation: fadeIn 1s ease-in;
 }
