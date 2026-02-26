@@ -83,7 +83,7 @@
 
             <!-- Technical Design -->
             <div class="project-subsection">
-                <h3 class="subsection-label">Technical Design</h3>
+                <h3 class="subsection-label" data-label="Technical Design"></h3>
                 <div class="subsection-content">
 
                     <div class="celeste-title-row">
@@ -113,7 +113,7 @@
 
             <!-- Sound Design -->
             <div class="project-subsection">
-                <h3 class="subsection-label">Sound Design</h3>
+                <h3 class="subsection-label" data-label="Sound Design"></h3>
                 <div class="subsection-content">
 
                     <div class="videos-row videos-row--single">
@@ -169,7 +169,7 @@
 
             <!-- Film Work -->
             <div class="project-subsection">
-                <h3 class="subsection-label">Film Work</h3>
+                <h3 class="subsection-label" data-label="Film Work"></h3>
                 <div class="subsection-content">
                 </div>
             </div>
@@ -220,6 +220,41 @@
         });
 
         sections.forEach(s => observer.observe(s));
+
+        // repeating vertical subsection labels
+        const GAP = 48;
+
+        function fillLabel(label) {
+            const text = label.dataset.label;
+            const subsection = label.closest('.project-subsection');
+            const height = subsection.getBoundingClientRect().height;
+            label.innerHTML = '';
+
+            const testSpan = document.createElement('span');
+            testSpan.textContent = text;
+            testSpan.style.visibility = 'hidden';
+            label.appendChild(testSpan);
+            const itemHeight = testSpan.getBoundingClientRect().height;
+            testSpan.remove();
+
+            const count = Math.max(1, Math.floor(height / (itemHeight + GAP)));
+            for (let i = 0; i < count; i++) {
+                const span = document.createElement('span');
+                span.textContent = text;
+                label.appendChild(span);
+            }
+        }
+
+        const labels = document.querySelectorAll('.subsection-label');
+        labels.forEach(fillLabel);
+
+        const resizeObserver = new ResizeObserver(() => {
+            labels.forEach(fillLabel);
+        });
+
+        document.querySelectorAll('.project-subsection').forEach(el => {
+            resizeObserver.observe(el);
+        });
     </script>
 </body>
 </html>
