@@ -57,7 +57,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--space-sm);
+    padding: 12px var(--space-sm);
     transition: padding 0.3s ease;
     border-top: 2px solid #363430;
     border-left: 2px solid #363430;
@@ -65,11 +65,16 @@ header {
     position: relative;
 }
 
+.header-content a {
+    display: flex;
+    align-items: center;
+}
+
 .header-bottom {
     border: 2px solid #363430;
     border-top: none;
-    transition: height 0.3s ease, padding 0.3s ease;
-    height: 16px;
+    transition: height 0.3s ease;
+    height: 10px;
 }
 
 header.header--compact .header-bottom {
@@ -77,8 +82,8 @@ header.header--compact .header-bottom {
 }
 
 header.header--compact .header-content {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 header.header--compact img {
@@ -143,7 +148,7 @@ h3 {
    VIDEO
 ========================= */
 .video-container {
-    max-width: 1150px;
+    max-width: 900px;
     margin: 0 auto var(--space-xl);
 }
 
@@ -176,18 +181,18 @@ h3 {
 
 .videos-row--single .video-item {
     flex: 0 0 81%;
-    max-width: 990px;
+    max-width: 860px;
 }
 
 .videos-row--double {
     justify-content: center;
-    gap: 180px;
+    gap: 80px;
 }
 
 .videos-row--double .video-item {
     flex: 0 0 44%;
     min-width: 0;
-    max-width: 598px;
+    max-width: 520px;
 }
 
 .video-item--empty {
@@ -361,8 +366,8 @@ h3 {
 }
 
 .celeste-video {
-    flex: 0 0 598px;
-    max-width: 598px;
+    flex: 0 0 520px;
+    max-width: 520px;
     margin-left: auto;
 }
 
