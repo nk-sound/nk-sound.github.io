@@ -105,7 +105,7 @@ header.header--compact img {
     color: #fffdf5;
     text-decoration: none;
     font-size: 1.3rem;
-    font-weight: 300;
+    font-weight: 500;
     text-transform: uppercase;
     transition: color 0.2s ease;
 }
@@ -232,8 +232,7 @@ h3 {
     margin-bottom: var(--space-sm);
 }
 
-.content h3,
-.content a.highlight {
+.content h3 {
     margin-left: 20px;
 }
 
@@ -244,7 +243,9 @@ h3 {
 .cv-links {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 12px;
+    margin-left: 0;
 }
 
 .pipe {
