@@ -16,7 +16,9 @@
         <!-- HEADER -->
         <header>
             <div class="header-content">
-                <img src="img/nksound_logo_warm4.png" alt="nksound logo" width="200">
+                <a href="/">
+                    <img src="img/nksound_logo_warm4.png" alt="nksound logo" width="200">
+                </a>
                 <nav class="header-nav">
                     <a href="#demoreel">reel</a>
                     <a href="#bio">bio</a>
@@ -222,22 +224,28 @@
         sections.forEach(s => observer.observe(s));
 
         // repeating vertical subsection labels
+        // in vertical-lr writing mode, the block axis is horizontal, so we
+        // measure getBoundingClientRect().width (not height) for the label text size,
+        // and getBoundingClientRect().height for the subsection height to fill
         const GAP = 48;
 
         function fillLabel(label) {
             const text = label.dataset.label;
             const subsection = label.closest('.project-subsection');
-            const height = subsection.getBoundingClientRect().height;
             label.innerHTML = '';
 
             const testSpan = document.createElement('span');
             testSpan.textContent = text;
             testSpan.style.visibility = 'hidden';
+            testSpan.style.position = 'absolute';
             label.appendChild(testSpan);
-            const itemHeight = testSpan.getBoundingClientRect().height;
+            // in vertical writing mode the text block runs along the width axis
+            const itemSize = testSpan.getBoundingClientRect().width;
             testSpan.remove();
 
-            const count = Math.max(1, Math.floor(height / (itemHeight + GAP)));
+            const subsectionHeight = subsection.getBoundingClientRect().height;
+            const count = Math.max(1, Math.floor(subsectionHeight / (itemSize + GAP)));
+
             for (let i = 0; i < count; i++) {
                 const span = document.createElement('span');
                 span.textContent = text;
