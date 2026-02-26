@@ -100,6 +100,7 @@ header.header--compact .header-nav a {
     color: #fffdf5;
     text-decoration: none;
     font-size: 1.5rem;
+    font-weight: 300;
     transition: color 0.2s ease, font-size 0.3s ease;
 }
 
@@ -375,9 +376,14 @@ h3 {
     margin-bottom: 120px;
 }
 
+.project-subsection + .project-subsection {
+    border-top: 2px solid var(--accent);
+    padding-top: var(--space-lg);
+}
+
 .subsection-label {
     writing-mode: vertical-rl;
-    text-orientation: mixed;
+    text-orientation: upright;
     font-weight: 500;
     font-size: 2rem;
     color: var(--accent);
