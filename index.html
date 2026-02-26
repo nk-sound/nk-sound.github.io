@@ -249,13 +249,14 @@
                 position: absolute;
                 white-space: nowrap;
             `;
-            probe.textContent = text;
+            // measure one full instance including the gap
+            probe.textContent = text + GAP_CHARS;
             document.body.appendChild(probe);
             const itemHeight = probe.getBoundingClientRect().height;
             document.body.removeChild(probe);
 
             const subsectionHeight = subsection.getBoundingClientRect().height;
-            // overfill by 2 extra instances so the text always reaches the bottom
+            // overfill by 2 so the last instance always clips at the bottom
             const count = Math.ceil(subsectionHeight / itemHeight) + 2;
             label.textContent = Array(count).fill(text).join(GAP_CHARS);
         }
