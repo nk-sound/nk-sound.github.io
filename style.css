@@ -393,7 +393,11 @@ h3 {
     margin: 0;
     padding-right: var(--space-md);
     flex-shrink: 0;
-    align-self: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    overflow: hidden;
 }
 
 .subsection-content {
