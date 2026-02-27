@@ -66,7 +66,10 @@
                 </div>
 
                 <div class="bio-right">
-                    <img src="img/img_2225.jpg" alt="Portrait of Nico">
+                    <div class="portrait-pixelate">
+                        <img src="img/img_2225.jpg" alt="Portrait of Nico" id="portraitImg">
+                        <canvas id="portraitCanvas"></canvas>
+                    </div>
                     <details class="games-box">
                         <summary>Currently Playing</summary>
                         <p>Valheim - Sludge Life - Sekiro - Ape Out - Lethal Company</p>
@@ -275,9 +278,10 @@
                             </div>
                             <div class="project-block-video">
                                 <div class="video-wrapper">
-                                    <iframe src="https://www.youtube-nocookie.com/embed/B_r2goS4070?si=GVv8l134cfMoqC8E" 
+                                    <iframe src="https://www.youtube-nocookie.com/embed/B_r2goS4070?si=bJ8qHuMg7g8LXQDt"
                                         title="Animal Pride"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
                                         allowfullscreen></iframe>
                                 </div>
                             </div>
@@ -287,15 +291,12 @@
                     <div class="project-block">
                         <div class="project-block-row">
                             <div class="project-block-title">
-                                <h3 class="project-block-heading">In the Shadow of the Sequoia</h3>
-                                <p class="project-block-text">Foley and Sound Design</p>
+                                <h3 class="project-block-heading">Project Title</h3>
+                                <p class="project-block-text">Project description goes here.</p>
                             </div>
                             <div class="project-block-video">
                                 <div class="video-wrapper">
-                                    <iframe src="https://www.youtube-nocookie.com/embed/qgkpbRPWzBM?si=CgPwSo_q_XoF9BPy" 
-                                        title="In the Shadow of the Sequoia" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-                                        allowfullscreen></iframe>
+                                    <iframe src="" loading="lazy" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
@@ -392,6 +393,59 @@
         document.querySelectorAll('.project-subsection').forEach(el => {
             resizeObserver.observe(el);
         });
+        // portrait pixelation
+        (function() {
+            const wrap   = document.querySelector('.portrait-pixelate');
+            const imgEl  = document.getElementById('portraitImg');
+            const canvas = document.getElementById('portraitCanvas');
+            const ctx    = canvas.getContext('2d');
+            const MAX_PX = 24;
+            const DURATION = 700;
+
+            function sizeCanvas() {
+                canvas.width  = imgEl.offsetWidth;
+                canvas.height = imgEl.offsetHeight;
+            }
+            imgEl.addEventListener('load', sizeCanvas);
+            if (imgEl.complete) sizeCanvas();
+            window.addEventListener('resize', sizeCanvas);
+
+            function easeInOut(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
+
+            let raf, startTime, startPx = 1, targetPx = 1, currentPx = 1;
+
+            function drawPixelated(px) {
+                const w = canvas.width, h = canvas.height;
+                if (px <= 1) { ctx.clearRect(0, 0, w, h); return; }
+                const off = document.createElement('canvas');
+                off.width  = Math.max(1, Math.floor(w / px));
+                off.height = Math.max(1, Math.floor(h / px));
+                const offCtx = off.getContext('2d');
+                offCtx.drawImage(imgEl, 0, 0, off.width, off.height);
+                ctx.clearRect(0, 0, w, h);
+                ctx.imageSmoothingEnabled = false;
+                ctx.drawImage(off, 0, 0, off.width, off.height, 0, 0, w, h);
+            }
+
+            function animate(ts) {
+                if (!startTime) startTime = ts;
+                const t = Math.min((ts - startTime) / DURATION, 1);
+                currentPx = startPx + (targetPx - startPx) * easeInOut(t);
+                drawPixelated(Math.round(currentPx));
+                if (t < 1) raf = requestAnimationFrame(animate);
+                else if (targetPx <= 1) ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+
+            function startAnim(to) {
+                cancelAnimationFrame(raf);
+                startPx = currentPx; targetPx = to; startTime = null;
+                raf = requestAnimationFrame(animate);
+            }
+
+            wrap.addEventListener('mouseenter', () => startAnim(MAX_PX));
+            wrap.addEventListener('mouseleave', () => startAnim(1));
+        })();
+
     </script>
 </body>
 </html>
