@@ -140,7 +140,7 @@ h3 {
 }
 
 #bio,
-#game-audio,
+#game,
 #film {
     margin-top: 140px;
 }
@@ -383,7 +383,7 @@ h3 {
 }
 
 .project-block-title {
-    flex: 0 0 30%;
+    flex: 0 0 40%;
 }
 
 .project-block-heading {
@@ -398,6 +398,7 @@ h3 {
 .project-block-video {
     flex: 1;
     min-width: 0;
+    max-width: 560px;
 }
 
 /* =========================
