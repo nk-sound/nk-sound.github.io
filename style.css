@@ -333,6 +333,32 @@ h3 {
     text-decoration: underline;
 }
 
+.cv-link {
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-decoration: underline overline;
+    text-underline-offset: 5px;
+    text-decoration-color: var(--accent);
+}
+
+.cv-link:hover {
+    text-decoration: underline overline;
+    text-decoration-color: var(--accent);
+}
+
+.cv-link {
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-decoration: underline overline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--accent);
+}
+
+.cv-link:hover {
+    text-decoration: underline overline;
+    text-decoration-color: var(--accent);
+}
+
 /* =========================
    PROJECT BLOCK LAYOUT
 ========================= */
