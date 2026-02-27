@@ -38,7 +38,7 @@ body {
 }
 
 section[id] {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 60px;
 }
 
 /* =========================
@@ -98,7 +98,7 @@ header.header--compact img {
 
 .header-nav {
     display: flex;
-    gap: var(--space-md);
+    gap: var(--space-sm);
 }
 
 .header-nav a {
@@ -140,7 +140,8 @@ h3 {
 }
 
 #bio,
-#game-audio {
+#game-audio,
+#film {
     margin-top: 140px;
 }
 
@@ -232,6 +233,10 @@ h3 {
     margin-bottom: var(--space-sm);
 }
 
+.content p:last-of-type {
+    margin-bottom: 0;
+}
+
 .content h3 {
     margin-left: 20px;
 }
@@ -246,6 +251,8 @@ h3 {
     justify-content: flex-end;
     gap: 12px;
     margin-left: 0;
+    margin-top: var(--space-sm);
+    margin-bottom: 0;
 }
 
 .pipe {
@@ -334,23 +341,10 @@ h3 {
 }
 
 .cv-link {
-    font-weight: 300;
-    letter-spacing: 0.15em;
+    font-weight: 500;
+    letter-spacing: 0;
     text-decoration: underline overline;
     text-underline-offset: 5px;
-    text-decoration-color: var(--accent);
-}
-
-.cv-link:hover {
-    text-decoration: underline overline;
-    text-decoration-color: var(--accent);
-}
-
-.cv-link {
-    font-weight: 300;
-    letter-spacing: 0.15em;
-    text-decoration: underline overline;
-    text-underline-offset: 4px;
     text-decoration-color: var(--accent);
 }
 
