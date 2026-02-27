@@ -277,6 +277,30 @@ h3 {
     display: block;
 }
 
+/* portrait pixelation */
+.portrait-pixelate {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+.portrait-pixelate img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+}
+
+.portrait-pixelate canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
 /* =========================
    GAMES DROPDOWN
 ========================= */
