@@ -402,12 +402,12 @@ h3 {
 
 .project-block-row {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 24px;
 }
 
 .project-block-title {
-    flex: 0 0 40%;
+    flex: 0 0 50%;
 }
 
 .project-block-heading {
