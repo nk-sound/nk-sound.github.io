@@ -332,16 +332,11 @@
             if (linkMap[id]) linkMap[id].classList.add('nav--active');
         }
 
-        new IntersectionObserver((entries) => {
+        const sectionObserver = new IntersectionObserver((entries) => {
             entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
-        }, { rootMargin: '-60px 0px -60% 0px', threshold: 0 })
-            .observe.apply(null, document.querySelectorAll('section[id]'));
+        }, { rootMargin: '-60px 0px -60% 0px', threshold: 0 });
 
-        document.querySelectorAll('section[id]').forEach(s =>
-            new IntersectionObserver((entries) => {
-                entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
-            }, { rootMargin: '-60px 0px -60% 0px', threshold: 0 }).observe(s)
-        );
+        document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
 
         // subsection labels
         const GAP_CHARS = '    ';
@@ -365,8 +360,8 @@
         const labels = document.querySelectorAll('.subsection-label');
         labels.forEach(fillLabel);
 
-        new ResizeObserver(() => labels.forEach(fillLabel))
-            .observe(document.querySelector('.container'));
+        const resizeObserver = new ResizeObserver(() => labels.forEach(fillLabel));
+        document.querySelectorAll('.project-subsection').forEach(el => resizeObserver.observe(el));
     </script>
 </body>
 </html>
