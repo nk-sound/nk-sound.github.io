@@ -376,6 +376,10 @@ h3 {
     margin-right: auto;
 }
 
+.award-badge-wrap {
+    text-align: center;
+}
+
 .project-block-video {
     flex: 1;
     min-width: 0;
