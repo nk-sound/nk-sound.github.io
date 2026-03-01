@@ -444,17 +444,7 @@ h3 {
     }
 
     .subsection-label {
-        writing-mode: horizontal-tb;
-        height: auto !important;
-        padding-right: 0;
-        padding-bottom: var(--space-sm);
-        font-size: 1.2rem;
-        border-left: none;
-        border-bottom: 2px solid var(--accent);
-        margin-bottom: var(--space-sm);
-        width: 100%;
-        overflow: visible;
-        white-space: normal;
+        display: none;
     }
 
     .subsection-content {
