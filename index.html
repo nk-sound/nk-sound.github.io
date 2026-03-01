@@ -370,7 +370,7 @@
         document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
 
         // subsection labels
-        const GAP_CHARS = '    ';
+        const GAP_CHARS = '\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0';
 
         function fillLabel(label) {
             const text = label.dataset.label;
