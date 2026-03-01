@@ -376,23 +376,90 @@ h3 {
 /* =========================
    RESPONSIVE
 ========================= */
+
+/* tablet */
+@media (max-width: 1024px) {
+    h2 {
+        padding-left: var(--space-md);
+    }
+
+    .project-block-title {
+        flex: 0 0 45%;
+    }
+}
+
+/* mobile */
 @media (max-width: 768px) {
     body {
         padding: var(--space-sm);
     }
 
     h2 {
-        font-size: 2.2rem;
-        padding-left: var(--space-sm);
+        font-size: 2rem;
+        padding-left: 0;
     }
 
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    #bio,
+    #game,
+    #film {
+        margin-top: 80px;
+    }
+
+    /* header */
+    .header-content img {
+        width: 100px;
+    }
+
+    .header-nav {
+        gap: 12px;
+    }
+
+    .header-nav a {
+        font-size: 1rem;
+    }
+
+    /* bio */
     .main-content {
         flex-direction: column;
+    }
+
+    .content {
+        flex: 1;
+        width: 100%;
     }
 
     .bio-right {
         flex: 1;
         width: 100%;
+    }
+
+    /* project blocks */
+    .project-subsection {
+        flex-direction: column;
+        margin-bottom: 60px;
+    }
+
+    .subsection-label {
+        writing-mode: horizontal-tb;
+        height: auto !important;
+        padding-right: 0;
+        padding-bottom: var(--space-sm);
+        font-size: 1.2rem;
+        border-left: none;
+        border-bottom: 2px solid var(--accent);
+        margin-bottom: var(--space-sm);
+        width: 100%;
+        overflow: visible;
+        white-space: normal;
+    }
+
+    .subsection-content {
+        border-left: none;
+        padding-left: 0;
     }
 
     .project-block-row {
@@ -402,6 +469,31 @@ h3 {
     .project-block-title,
     .project-block-video {
         flex: 1;
+        width: 100%;
         max-width: 100%;
+    }
+
+    /* video container */
+    .video-container {
+        margin-bottom: var(--space-md);
+    }
+}
+
+/* small mobile */
+@media (max-width: 480px) {
+    .header-nav a {
+        font-size: 0.85rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    .project-block-heading {
+        font-size: 1.3rem;
     }
 }
