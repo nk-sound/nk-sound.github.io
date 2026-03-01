@@ -367,6 +367,13 @@ h3 {
     margin-top: var(--space-sm);
 }
 
+.award-badge {
+    width: 160px;
+    height: auto;
+    margin-top: var(--space-sm);
+    display: block;
+}
+
 .project-block-video {
     flex: 1;
     min-width: 0;
