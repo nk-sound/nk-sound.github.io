@@ -389,6 +389,55 @@ h3 {
 }
 
 /* =========================
+   CONTACT
+========================= */
+.contact-section {
+    margin-top: 140px;
+    margin-bottom: var(--space-xl);
+    display: flex;
+    justify-content: center;
+}
+
+.contact-inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    max-width: 66%;
+    width: 100%;
+}
+
+.contact-img {
+    flex: 0 0 42%;
+    width: 42%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    object-fit: cover;
+}
+
+.contact-content {
+    flex: 1;
+    padding: var(--space-md);
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+.contact-content p {
+    margin-bottom: var(--space-sm);
+}
+
+.contact-content p:last-of-type {
+    margin-bottom: 0;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: var(--space-md);
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 
@@ -400,6 +449,10 @@ h3 {
 
     .project-block-title {
         flex: 0 0 45%;
+    }
+
+    .contact-inner {
+        max-width: 85%;
     }
 }
 
@@ -481,6 +534,25 @@ h3 {
     /* video container */
     .video-container {
         margin-bottom: var(--space-md);
+    }
+
+    /* contact */
+    .contact-section {
+        margin-top: 80px;
+    }
+
+    .contact-inner {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .contact-img {
+        flex: 1;
+        width: 100%;
+    }
+
+    .contact-content {
+        width: 100%;
     }
 }
 
