@@ -143,7 +143,8 @@ h3 {
 
 #bio,
 #game,
-#film {
+#film,
+#contact {
     margin-top: 140px;
 }
 
@@ -392,23 +393,22 @@ h3 {
    CONTACT
 ========================= */
 .contact-section {
-    margin-top: 140px;
-    margin-bottom: var(--space-xl);
     display: flex;
     justify-content: center;
 }
 
 .contact-inner {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     gap: var(--space-md);
-    max-width: 66%;
+    max-width: 80%;
     width: 100%;
 }
 
 .contact-img {
-    flex: 0 0 42%;
-    width: 42%;
+    flex: 1 1 0;
+    width: 0;
+    min-width: 0;
     height: auto;
     border-radius: 5px;
     display: block;
@@ -416,25 +416,93 @@ h3 {
 }
 
 .contact-content {
-    flex: 1;
+    flex: 1 1 0;
+    width: 0;
+    min-width: 0;
     padding: var(--space-md);
     border: 1px solid #333;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-content p {
     margin-bottom: var(--space-sm);
 }
 
-.contact-content p:last-of-type {
-    margin-bottom: 0;
-}
-
 .contact-links {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.contact-form-wrap {
+    margin-top: auto;
+    padding-top: var(--space-md);
+    border-top: 1px solid #363430;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.form-group label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #fffdf5;
+    opacity: 0.6;
+}
+
+.form-group input,
+.form-group textarea {
+    background: transparent;
+    border: 1px solid #363430;
+    border-radius: 4px;
+    color: #fffdf5;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 100;
+    padding: 8px 12px;
+    transition: border-color 0.2s ease;
+    resize: none;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #fffdf5;
+    opacity: 0.3;
+}
+
+.contact-submit {
+    align-self: flex-start;
+    cursor: pointer;
+    background: transparent;
+}
+
+.form-status {
+    font-size: 0.85rem;
+    min-height: 1.2em;
+    margin: 0;
 }
 
 /* =========================
@@ -473,7 +541,8 @@ h3 {
 
     #bio,
     #game,
-    #film {
+    #film,
+    #contact {
         margin-top: 80px;
     }
 
@@ -537,10 +606,6 @@ h3 {
     }
 
     /* contact */
-    .contact-section {
-        margin-top: 80px;
-    }
-
     .contact-inner {
         flex-direction: column;
         max-width: 100%;
@@ -552,7 +617,12 @@ h3 {
     }
 
     .contact-content {
+        flex: 1;
         width: 100%;
+    }
+
+    .form-row {
+        flex-direction: column;
     }
 }
 
