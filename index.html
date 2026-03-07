@@ -96,14 +96,13 @@
                     <div class="project-block">
                         <div class="project-block-row">
                             <div class="project-block-title">
-                                <h3 class="project-block-heading">Winter Village – Implementation Showcase</h3>
-                                <p class="project-block-text">Technical breakdown of my Winter Village project in Unreal Engine using Wwise middleware. 
-                                    I go through my thinking for several audio systems in the demo level set in a small winter village.</p>
+                                <h3 class="project-block-heading">Winter Village – Gameplay Demo</h3>
+                                <p class="project-block-text">Gameplay demo of my Winter Village project built in Unreal Engine 5.2 using Wwise audio middleware.</p>
                             </div>
                             <div class="project-block-video">
                                 <div class="video-wrapper">
-                                    <iframe src="https://www.youtube-nocookie.com/embed/PLACEHOLDER_ID_1?rel=0" 
-                                        title="Winter Village Implementation Breakdown" 
+                                    <iframe src="https://www.youtube-nocookie.com/embed/sa7ZbSXSJ0U?si=PjnDavg1xjwCjxT7" 
+                                        title="Winter Village – Gameplay Demo" 
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                         referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen>
                                         </iframe>
@@ -115,13 +114,14 @@
                     <div class="project-block">
                         <div class="project-block-row">
                             <div class="project-block-title">
-                                <h3 class="project-block-heading">Winter Village – Gameplay Demo</h3>
-                                <p class="project-block-text">Gameplay demo of my Winter Village project built in Unreal Engine 5.2 using Wwise audio middleware.</p>
+                                <h3 class="project-block-heading">Winter Village – Implementation Showcase</h3>
+                                <p class="project-block-text">Technical breakdown of my Winter Village project in Unreal Engine using Wwise middleware. 
+                                    I go through my thinking for several audio systems in the demo level set in a small winter village.</p>
                             </div>
                             <div class="project-block-video">
                                 <div class="video-wrapper">
-                                    <iframe src="https://www.youtube-nocookie.com/embed/sa7ZbSXSJ0U?si=PjnDavg1xjwCjxT7" 
-                                        title="Winter Village – Gameplay Demo" 
+                                    <iframe src="https://www.youtube-nocookie.com/embed/PLACEHOLDER_ID_1?rel=0" 
+                                        title="Winter Village Implementation Breakdown" 
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                         referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen>
                                         </iframe>
@@ -448,7 +448,6 @@
     </div>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // header scroll compact
         const header = document.querySelector('header');
 
         function updateHeader() {
@@ -458,7 +457,6 @@
         window.addEventListener('scroll', updateHeader, { passive: true });
         updateHeader();
 
-        // nav highlight
         const navLinks = document.querySelectorAll('.header-nav a');
         const linkMap = {};
 
@@ -477,7 +475,6 @@
 
         document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
 
-        // subsection labels
         const GAP_CHARS = '\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0';
 
         function fillLabel(label) {
@@ -502,7 +499,6 @@
         const resizeObserver = new ResizeObserver(() => labels.forEach(fillLabel));
         document.querySelectorAll('.project-subsection').forEach(el => resizeObserver.observe(el));
 
-        // hamburger menu
         const hamburger = document.querySelector('.hamburger');
         const nav = document.querySelector('.header-nav');
 
@@ -513,7 +509,6 @@
             document.body.style.overflow = isOpen ? 'hidden' : '';
         });
 
-        // close nav when a link is clicked
         nav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('nav--open');
@@ -523,7 +518,6 @@
             });
         });
 
-        // contact form
         async function handleContactSubmit(e) {
             const name = document.getElementById('contact-name').value.trim();
             const email = document.getElementById('contact-email').value.trim();
