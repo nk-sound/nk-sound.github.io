@@ -26,6 +26,11 @@
                     <a href="#film">FILM</a>
                     <a href="#contact">CONTACT</a>
                 </nav>
+                <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
             <div class="header-bottom"></div>
         </header>
@@ -428,7 +433,7 @@
     </div>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // header
+        // header scroll compact
         const header = document.querySelector('header');
 
         function updateHeader() {
@@ -481,6 +486,27 @@
 
         const resizeObserver = new ResizeObserver(() => labels.forEach(fillLabel));
         document.querySelectorAll('.project-subsection').forEach(el => resizeObserver.observe(el));
+
+        // hamburger menu
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('.header-nav');
+
+        hamburger.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('nav--open');
+            hamburger.classList.toggle('is-open', isOpen);
+            hamburger.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        // close nav when a link is clicked
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('nav--open');
+                hamburger.classList.remove('is-open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
 
         // contact form
         async function handleContactSubmit(e) {
