@@ -406,7 +406,7 @@ h3 {
 }
 
 .contact-img {
-    flex: 1 1 0;
+    flex: 1.4 1 0;
     width: 0;
     min-width: 0;
     height: auto;
