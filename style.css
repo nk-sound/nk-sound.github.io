@@ -73,7 +73,7 @@ header {
 }
 
 .header-content img {
-    width: 160px;
+    width: 140px;
     height: auto;
     transition: width 0.3s ease;
 }
@@ -184,6 +184,7 @@ h3 {
 #bio,
 #game,
 #film,
+#tools,
 #contact {
     margin-top: 140px;
 }
@@ -400,6 +401,11 @@ h3 {
     flex: 0 0 50%;
 }
 
+/* modifier for entries with no accompanying video (e.g. Skywind, Tools, Abyss: Vault) */
+.project-block-title.full-width {
+    flex: 1 1 100%;
+}
+
 .project-block-heading {
     margin: 0;
     font-size: 2.4rem;
@@ -408,6 +414,10 @@ h3 {
 
 .project-block-text {
     margin-top: var(--space-sm);
+}
+
+.tools-cta {
+    margin-top: var(--space-md);
 }
 
 .award-badge {
@@ -421,6 +431,19 @@ h3 {
 
 .award-badge-wrap {
     text-align: center;
+}
+
+/* text-only status pill, e.g. "In Venues Worldwide" — same visual language as .cv-link but non-interactive */
+.pill {
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    padding: 6px 16px;
+    border: 1.5px solid var(--accent);
+    color: var(--accent);
+    border-radius: 20px;
+    font-size: 0.82rem;
+    text-transform: uppercase;
 }
 
 .project-block-video {
@@ -582,6 +605,7 @@ h3 {
     #bio,
     #game,
     #film,
+    #tools,
     #contact {
         margin-top: 80px;
     }
