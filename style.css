@@ -73,7 +73,7 @@ header {
 }
 
 .header-content img {
-    width: 200px;
+    width: 140px;
     height: auto;
     transition: width 0.3s ease;
 }
@@ -383,8 +383,8 @@ h3 {
 
 .project-block {
     border-top: 2px solid #363430;
-    padding-top: calc(var(--space-lg) + 9px);
-    padding-bottom: calc(var(--space-lg) + 9px);
+    padding-top: calc(var(--space-xl) + 20px);
+    padding-bottom: calc(var(--space-xl) + 20px);
 }
 
 .project-block:last-of-type {
@@ -683,6 +683,11 @@ h3 {
     .project-subsection {
         flex-direction: column;
         margin-bottom: 60px;
+    }
+
+    .project-block {
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .subsection-label {
