@@ -33,7 +33,7 @@ body {
 }
 
 .container {
-    max-width: 1440px;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
@@ -73,7 +73,7 @@ header {
 }
 
 .header-content img {
-    width: 140px;
+    width: 200px;
     height: auto;
     transition: width 0.3s ease;
 }
@@ -162,7 +162,7 @@ header.header--compact .header-bottom {
 ========================= */
 h2 {
     font-size: 3.5rem;
-    font-weight: 300;
+    font-weight: 500;
     text-transform: uppercase;
     border-bottom: 2px solid var(--accent);
     padding-bottom: 10px;
@@ -186,7 +186,7 @@ h3 {
 #film,
 #tools,
 #contact {
-    margin-top: 140px;
+    margin-top: 190px;
 }
 
 /* =========================
@@ -351,11 +351,11 @@ h3 {
 .project-subsection {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 120px;
+    margin-bottom: 160px;
 }
 
 .project-subsection + .project-subsection {
-    border-top: 2px solid var(--accent);
+    border-top: 4px solid var(--accent);
     padding-top: var(--space-lg);
 }
 
@@ -383,8 +383,8 @@ h3 {
 
 .project-block {
     border-top: 2px solid #363430;
-    padding-top: calc(var(--space-md) + 12px);
-    padding-bottom: calc(var(--space-md) + 12px);
+    padding-top: calc(var(--space-lg) + 9px);
+    padding-bottom: calc(var(--space-lg) + 9px);
 }
 
 .project-block:last-of-type {
@@ -408,7 +408,7 @@ h3 {
 
 .project-block-heading {
     margin: 0;
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 900;
 }
 
@@ -574,8 +574,17 @@ h3 {
 
 /* tablet */
 @media (max-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+
     h2 {
         padding-left: var(--space-md);
+        font-size: 3rem;
+    }
+
+    .project-block-heading {
+        font-size: 1.85rem;
     }
 
     .project-block-title {
@@ -591,6 +600,7 @@ h3 {
 @media (max-width: 768px) {
     body {
         padding: var(--space-sm);
+        font-size: 16px;
     }
 
     h2 {
@@ -600,6 +610,10 @@ h3 {
 
     h3 {
         font-size: 1.5rem;
+    }
+
+    .project-block-heading {
+        font-size: 1.7rem;
     }
 
     #bio,
