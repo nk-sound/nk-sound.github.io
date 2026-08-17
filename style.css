@@ -261,6 +261,28 @@ h3 {
     margin-top: 5px;
 }
 
+.skills-list {
+    list-style: none;
+    columns: 2;
+    column-gap: var(--space-md);
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.skills-list li {
+    break-inside: avoid;
+    margin-bottom: 10px;
+    padding-left: 18px;
+    position: relative;
+}
+
+.skills-list li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
 .cv-links {
     display: flex;
     align-items: center;
@@ -415,12 +437,16 @@ h3 {
 }
 
 .project-block-title {
-    flex: 0 0 50%;
+    flex: 0 0 44%;
 }
 
-/* modifier for entries with no accompanying video (e.g. Skywind, Tools, Abyss: Vault) */
+/* modifier for entries with no accompanying video (e.g. Skywind, Tools) */
 .project-block-title.full-width {
     flex: 1 1 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .project-block-heading {
@@ -450,23 +476,9 @@ h3 {
     text-align: center;
 }
 
-/* text-only status pill, e.g. "In Venues Worldwide" — same visual language as .cv-link but non-interactive */
-.pill {
-    display: inline-block;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    padding: 6px 16px;
-    border: 1.5px solid var(--accent);
-    color: var(--accent);
-    border-radius: 20px;
-    font-size: 0.82rem;
-    text-transform: uppercase;
-}
-
 .project-block-video {
     flex: 1;
     min-width: 0;
-    max-width: 560px;
 }
 
 /* =========================
@@ -589,6 +601,12 @@ h3 {
    RESPONSIVE
 ========================= */
 
+@media (min-width: 1400px) {
+    .skills-list {
+        columns: 3;
+    }
+}
+
 /* tablet */
 @media (max-width: 1024px) {
     body {
@@ -605,7 +623,7 @@ h3 {
     }
 
     .project-block-title {
-        flex: 0 0 45%;
+        flex: 0 0 42%;
     }
 
     .contact-inner {
@@ -769,5 +787,9 @@ h3 {
 
     .project-block-heading {
         font-size: 1.6rem;
+    }
+
+    .skills-list {
+        columns: 1;
     }
 }
